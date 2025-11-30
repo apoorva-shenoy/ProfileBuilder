@@ -38,7 +38,7 @@ const education: Education[] = [
 const certifications: Certification[] = [
   { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft" },
   { title: "Microsoft Certified: Azure Fundamentals", issuer: "Microsoft" },
-  { title: "Oracle Cloud Infrastructure Foundation 2021 Associate", issuer: "Oracle" },
+  { title: "Oracle Cloud Infrastructure Foundation 2025 Associate", issuer: "Oracle" },
   { title: "Creating Spring Boot Microservices", issuer: "LinkedIn Learning" },
   { title: "JavaScript, jQuery, and JSON", issuer: "Coursera" },
 ];
