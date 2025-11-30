@@ -25,12 +25,18 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <Avatar className="w-32 h-32 mx-auto mb-6 border-4 border-white/20 shadow-xl">
-          <AvatarImage src={profilePhoto} alt="Apoorva Shenoy" className="object-cover" />
-          <AvatarFallback className="text-4xl font-serif bg-primary text-primary-foreground">
-            AS
-          </AvatarFallback>
-        </Avatar>
+        <div className="relative w-36 h-36 mx-auto mb-6">
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-blue-400 to-primary p-1">
+            <div className="w-full h-full rounded-full bg-white p-0.5">
+              <Avatar className="w-full h-full">
+                <AvatarImage src={profilePhoto} alt="Apoorva Shenoy" className="object-cover object-top" />
+                <AvatarFallback className="text-4xl font-serif bg-primary text-primary-foreground">
+                  AS
+                </AvatarFallback>
+              </Avatar>
+            </div>
+          </div>
+        </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white mb-4">
           Apoorva Shenoy
