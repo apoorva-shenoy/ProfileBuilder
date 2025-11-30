@@ -16,7 +16,7 @@ export function Footer() {
           </p>
           <p className="flex items-center gap-1">
             Created using 
-            <SiReact className="h-4 w-4 text-[#61DAFB] mx-1" /> React
+            <SiReact className="h-4 w-4 text-[#61DAFB] mx-1" /> React JS
           </p>
         </div>
       </div>
