@@ -15,7 +15,7 @@ export function Footer() {
             {currentYear} Apoorva Shenoy. All rights reserved.
           </p>
           <p className="flex items-center gap-1">
-            Built with <Heart className="h-3.5 w-3.5 text-destructive mx-0.5" /> using{" "}
+            Created using 
             <SiReact className="h-4 w-4 text-[#61DAFB] mx-1" /> React
           </p>
         </div>

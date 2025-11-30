@@ -4,13 +4,24 @@ import { storage } from "./storage";
 
 export async function registerRoutes(
   httpServer: Server,
-  app: Express
+  app: Express,
 ): Promise<Server> {
-  // put application routes here
-  // prefix all routes with /api
+  // Basic routes - prefix all routes with /api
 
-  // use storage to perform CRUD operations on the storage interface
-  // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
+  // Health check: used to verify the server is up and responding
+  app.get("/api/health", (_req, res) => {
+    res.json({
+      status: "ok",
+      message: "ProfileBuilder API running",
+    });
+  });
+
+  // Example of using storage (already exported from ./storage)
+  // Uncomment and implement more routes as needed.
+  // app.get('/api/users', async (req, res) => {
+  //   const users = await storage.getUsers();
+  //   res.json(users);
+  // });
 
   return httpServer;
 }
