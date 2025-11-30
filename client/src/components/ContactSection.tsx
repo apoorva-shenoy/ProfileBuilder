@@ -14,8 +14,8 @@ export function ContactSection() {
           Let's Connect
         </h2>
         <p className="text-muted-foreground mb-12 max-w-2xl mx-auto">
-          I'm always open to discussing new opportunities, innovative projects, 
-          or ways to add value with my technical expertise. Feel free to reach out!
+          I'm always open to connecting with fellow technology enthusiasts. 
+          Feel free to reach out through email or LinkedIn.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
