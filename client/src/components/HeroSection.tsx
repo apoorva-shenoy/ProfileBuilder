@@ -1,7 +1,8 @@
 import { Mail, Linkedin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import heroBackground from "@assets/generated_images/professional_tech_hero_background.png";
+import profilePhoto from "@assets/profilePhoto2025_1764534670669.jpeg";
 
 export function HeroSection() {
   const scrollToSection = (href: string) => {
@@ -25,6 +26,7 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <Avatar className="w-32 h-32 mx-auto mb-6 border-4 border-white/20 shadow-xl">
+          <AvatarImage src={profilePhoto} alt="Apoorva Shenoy" className="object-cover" />
           <AvatarFallback className="text-4xl font-serif bg-primary text-primary-foreground">
             AS
           </AvatarFallback>
