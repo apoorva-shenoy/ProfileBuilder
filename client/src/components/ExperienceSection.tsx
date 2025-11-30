@@ -1,9 +1,10 @@
-import { MapPin, Calendar } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MapPin, Calendar, Building2, ChevronRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 interface Experience {
   company: string;
+  logo: string;
   roles: {
     title: string;
     duration: string;
@@ -16,111 +17,81 @@ interface Experience {
 const experiences: Experience[] = [
   {
     company: "AT&T",
+    logo: "AT",
     roles: [
       {
         title: "Technical Specialist",
-        duration: "September 2023 - Present (2+ years)",
-        location: "Bengaluru, Karnataka, India",
+        duration: "September 2023 - Present",
+        location: "Bengaluru, India",
         highlights: [
-          "Developed React JS application for database operations management in performance-critical environments",
-          "Created dynamic, responsive user interfaces using Angular",
-          "Built and maintained frontend components using .NET technologies",
-          "Designed and deployed microservices-based architectures using Java Spring Boot",
-          "Developed seamless Snowflake data integration solutions",
-          "Created robust and scalable REST APIs using .NET Core",
-          "Deployed containerized applications on Azure Kubernetes Service (AKS)",
-          "Deployed and managed applications using Azure App Services",
-          "Utilized Jenkins for CI/CD pipeline automation",
+          "Developed React JS applications for database operations management in performance-critical environments",
+          "Designed and deployed microservices architectures using Java Spring Boot ensuring scalability and fault tolerance",
+          "Built and deployed containerized applications on Azure Kubernetes Service (AKS)",
+          "Created robust REST APIs using .NET Core with seamless Snowflake data integration",
+          "Implemented Jenkins CI/CD pipelines improving delivery speed and consistency",
         ],
         technologies: [
           "React.js",
           "Angular",
-          ".NET",
           "Spring Boot",
-          "Snowflake",
+          ".NET Core",
           "Azure AKS",
+          "Snowflake",
           "Jenkins",
-          "SQL",
         ],
       },
     ],
   },
   {
     company: "Accenture",
+    logo: "AC",
     roles: [
       {
         title: "Senior Software Engineer",
-        duration: "April 2022 - August 2023 (1 year 5 months)",
-        location: "Bengaluru, Karnataka, India",
+        duration: "April 2022 - August 2023",
+        location: "Bengaluru, India",
         highlights: [
-          "Led agile teams, ensuring timely delivery of high-quality solutions",
-          "Oversaw end-to-end software development lifecycle from design to deployment",
-          "Built intuitive user interfaces using Angular",
-          "Created RESTful APIs for seamless frontend-backend communication",
-          "Developed scalable backend services using .NET Core",
+          "Led agile teams ensuring timely delivery of high-quality solutions while mentoring junior developers",
+          "Oversaw end-to-end SDLC from design to deployment for enterprise applications",
+          "Built intuitive Angular user interfaces enhancing user experience and engagement",
+          "Developed scalable backend services using .NET Core with RESTful API design",
         ],
-        technologies: ["Angular", ".NET Core", "REST APIs", "Agile"],
+        technologies: ["Angular", ".NET Core", "REST APIs", "Agile", "SDLC"],
       },
       {
         title: "Software Engineer",
-        duration: "September 2021 - March 2022 (7 months)",
-        location: "Bengaluru, Karnataka, India",
+        duration: "September 2021 - March 2022",
+        location: "Bengaluru, India",
         highlights: [
-          "Contributed to innovative software solutions with cross-functional teams",
+          "Contributed to innovative software solutions collaborating with cross-functional teams",
         ],
       },
     ],
   },
   {
     company: "Tata Consultancy Services",
+    logo: "TCS",
     roles: [
       {
         title: "System Engineer",
-        duration: "July 2020 - August 2021 (1 year 2 months)",
-        location: "Bengaluru, Karnataka, India",
+        duration: "July 2020 - August 2021",
+        location: "Bengaluru, India",
         highlights: [
-          "Worked on developing process workflow manager tool for R2R (Record to Report)",
-          "Handled Finance and Accounting end-to-end processes",
+          "Developed process workflow manager tool for Record to Report (R2R) finance processes",
+          "Managed end-to-end Finance and Accounting automation solutions",
         ],
       },
       {
         title: "Assistant System Engineer - Developer",
-        duration: "April 2019 - June 2020 (1 year 3 months)",
-        location: "Bengaluru, Karnataka, India",
+        duration: "April 2019 - June 2020",
+        location: "Bengaluru, India",
         highlights: [
-          "Part of Technology and Innovation development team for Landmark Group",
-          "Worked on API Integration and web services",
-          "Participated in Project Planning and Implementing Use-case scenarios",
-          "Part of Software Security Assessment (SSA) including Fortify Scan, Web Inspect, and VAPT",
-          "Prepared High Level Design (HDD) and Low Level Design (LDD) documents",
+          "Part of Technology and Innovation team for Landmark Group retail client",
+          "Worked on API Integration and web services development",
+          "Led Software Security Assessment including Fortify Scan and VAPT testing",
+          "Prepared High Level and Low Level Design documentation",
         ],
         technologies: ["API Integration", "Web Services", "Security Assessment"],
-      },
-      {
-        title: "Assistant Systems Engineer",
-        duration: "June 2019 - April 2020 (11 months)",
-        location: "Bengaluru, Karnataka, India",
-        highlights: [
-          "Developer role in retail project for Landmark Group",
-          "Participated in project planning and requirement gathering",
-          "Part of sentinel data migration activity",
-        ],
-      },
-    ],
-  },
-  {
-    company: "Fiabilite Network Solutions",
-    roles: [
-      {
-        title: "Internship Trainee",
-        duration: "July 2017 - August 2017 (2 months)",
-        location: "Bengaluru, Karnataka, India",
-        highlights: [
-          "Utilized NumPy, Pandas, and Matplotlib for data analysis and visualization",
-          "Contributed to scalable web solutions using Django and Flask",
-          "Worked collaboratively in cross-functional teams",
-        ],
-        technologies: ["Python", "NumPy", "Pandas", "Django", "Flask"],
       },
     ],
   },
@@ -133,80 +104,83 @@ export function ExperienceSection() {
       className="py-20 bg-card"
       data-testid="section-experience"
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground text-center mb-12">
-          Work Experience
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground text-center mb-4">
+          Professional Experience
         </h2>
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          A track record of delivering impactful solutions at leading technology companies
+        </p>
 
-        <div className="relative">
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-1/2" />
-
-          <div className="space-y-8">
-            {experiences.map((exp, expIndex) => (
-              <div key={exp.company} className="relative">
-                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1/2 mt-6 z-10" />
-
-                <div
-                  className={`ml-10 md:ml-0 ${
-                    expIndex % 2 === 0
-                      ? "md:pr-[52%]"
-                      : "md:pl-[52%]"
-                  }`}
-                >
-                  <Card className="hover-elevate" data-testid={`card-experience-${exp.company.toLowerCase().replace(/\s+/g, '-')}`}>
-                    <CardHeader className="pb-2">
-                      <CardTitle className="font-serif text-xl">
-                        {exp.company}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      {exp.roles.map((role, roleIndex) => (
-                        <div
-                          key={roleIndex}
-                          className={roleIndex > 0 ? "pt-4 border-t border-border" : ""}
-                        >
-                          <h4 className="font-semibold text-foreground mb-1">
-                            {role.title}
-                          </h4>
-                          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mb-3">
-                            <span className="flex items-center gap-1">
-                              <Calendar className="h-3.5 w-3.5" />
-                              {role.duration}
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <MapPin className="h-3.5 w-3.5" />
-                              {role.location}
-                            </span>
-                          </div>
-                          <ul className="space-y-1.5 text-sm text-muted-foreground mb-3">
-                            {role.highlights.map((highlight, hIndex) => (
-                              <li key={hIndex} className="flex items-start gap-2">
-                                <span className="text-primary mt-1.5">-</span>
-                                <span>{highlight}</span>
-                              </li>
-                            ))}
-                          </ul>
-                          {role.technologies && (
-                            <div className="flex flex-wrap gap-1.5">
-                              {role.technologies.map((tech) => (
-                                <Badge
-                                  key={tech}
-                                  variant="secondary"
-                                  className="text-xs"
-                                >
-                                  {tech}
-                                </Badge>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </CardContent>
-                  </Card>
+        <div className="space-y-6">
+          {experiences.map((exp) => (
+            <Card
+              key={exp.company}
+              className="hover-elevate overflow-visible"
+              data-testid={`card-experience-${exp.company.toLowerCase().replace(/\s+/g, '-')}`}
+            >
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-14 h-14 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="text-primary font-bold text-lg">{exp.logo}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-serif font-bold text-foreground">
+                      {exp.company}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {exp.roles.length > 1 ? `${exp.roles.length} positions` : exp.roles[0].duration}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+
+                <div className="space-y-6 ml-0 md:ml-18">
+                  {exp.roles.map((role, roleIndex) => (
+                    <div
+                      key={roleIndex}
+                      className={roleIndex > 0 ? "pt-5 border-t border-border" : ""}
+                    >
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <h4 className="font-semibold text-foreground">
+                          {role.title}
+                        </h4>
+                        <ChevronRight className="h-4 w-4 text-muted-foreground hidden sm:block" />
+                        <span className="text-sm text-muted-foreground">{role.duration}</span>
+                      </div>
+                      
+                      <div className="flex items-center gap-1 text-xs text-muted-foreground mb-3">
+                        <MapPin className="h-3 w-3" />
+                        {role.location}
+                      </div>
+
+                      <ul className="space-y-2 text-sm text-muted-foreground mb-4">
+                        {role.highlights.map((highlight, hIndex) => (
+                          <li key={hIndex} className="flex items-start gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                            <span>{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {role.technologies && (
+                        <div className="flex flex-wrap gap-1.5">
+                          {role.technologies.map((tech) => (
+                            <Badge
+                              key={tech}
+                              variant="secondary"
+                              className="text-xs"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
