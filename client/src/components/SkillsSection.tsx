@@ -6,7 +6,7 @@ interface SkillCategory {
   title: string;
   icon: typeof Monitor;
   color: string;
-  skills: { name: string; level?: "Expert" | "Advanced" | "Proficient" }[];
+  skills: { name: string }[];
 }
 
 const skillCategories: SkillCategory[] = [
@@ -15,12 +15,12 @@ const skillCategories: SkillCategory[] = [
     icon: Monitor,
     color: "text-blue-500",
     skills: [
-      { name: "React.js", level: "Expert" },
-      { name: "Angular", level: "Expert" },
-      { name: "TypeScript", level: "Advanced" },
-      { name: "JavaScript", level: "Expert" },
-      { name: ".NET Frontend", level: "Advanced" },
-      { name: "HTML5/CSS3", level: "Expert" },
+      { name: "React.js" },
+      { name: "Angular" },
+      { name: "TypeScript" },
+      { name: "JavaScript" },
+      { name: ".NET Frontend" },
+      { name: "HTML5/CSS3" },
     ],
   },
   {
@@ -28,12 +28,12 @@ const skillCategories: SkillCategory[] = [
     icon: Server,
     color: "text-green-500",
     skills: [
-      { name: "Java Spring Boot", level: "Expert" },
-      { name: "Microservices", level: "Expert" },
-      { name: ".NET Core", level: "Advanced" },
-      { name: "REST APIs", level: "Expert" },
-      { name: "Python", level: "Proficient" },
-      { name: "Node.js", level: "Proficient" },
+      { name: "Java Spring Boot" },
+      { name: "Microservices" },
+      { name: ".NET Core" },
+      { name: "REST APIs" },
+      { name: "Python" },
+      { name: "Node.js" },
     ],
   },
   {
@@ -41,12 +41,12 @@ const skillCategories: SkillCategory[] = [
     icon: Cloud,
     color: "text-cyan-500",
     skills: [
-      { name: "Azure AKS", level: "Advanced" },
-      { name: "Azure App Services", level: "Advanced" },
-      { name: "Jenkins CI/CD", level: "Advanced" },
-      { name: "Docker", level: "Advanced" },
-      { name: "Oracle Cloud", level: "Proficient" },
-      { name: "Git", level: "Expert" },
+      { name: "Azure AKS" },
+      { name: "Azure App Services" },
+      { name: "Jenkins CI/CD" },
+      { name: "Docker" },
+      { name: "Oracle Cloud" },
+      { name: "Git" },
     ],
   },
   {
@@ -54,10 +54,10 @@ const skillCategories: SkillCategory[] = [
     icon: Database,
     color: "text-orange-500",
     skills: [
-      { name: "SQL", level: "Expert" },
-      { name: "PL/SQL", level: "Advanced" },
-      { name: "Snowflake", level: "Advanced" },
-      { name: "PostgreSQL", level: "Proficient" },
+      { name: "SQL" },
+      { name: "PL/SQL" },
+      { name: "Snowflake" },
+      { name: "PostgreSQL" },
     ],
   },
   {
@@ -65,10 +65,10 @@ const skillCategories: SkillCategory[] = [
     icon: Code2,
     color: "text-purple-500",
     skills: [
-      { name: "Microservices", level: "Expert" },
-      { name: "RESTful Design", level: "Expert" },
-      { name: "System Design", level: "Advanced" },
-      { name: "API Integration", level: "Expert" },
+      { name: "Microservices" },
+      { name: "RESTful Design" },
+      { name: "System Design" },
+      { name: "API Integration" },
     ],
   },
   {
@@ -76,22 +76,28 @@ const skillCategories: SkillCategory[] = [
     icon: Settings,
     color: "text-pink-500",
     skills: [
-      { name: "Agile/Scrum", level: "Expert" },
-      { name: "SDLC", level: "Expert" },
-      { name: "CI/CD", level: "Advanced" },
-      { name: "TDD", level: "Proficient" },
+      { name: "Agile/Scrum" },
+      { name: "SDLC" },
+      { name: "CI/CD" },
+      { name: "TDD" },
     ],
   },
 ];
 
-const getLevelColor = (level?: string) => {
-  switch (level) {
-    case "Expert":
-      return "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20";
-    case "Advanced":
+const getCategoryColor = (categoryColor: string) => {
+  switch (categoryColor) {
+    case "text-blue-500":
       return "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20";
-    case "Proficient":
+    case "text-green-500":
+      return "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20";
+    case "text-cyan-500":
+      return "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20";
+    case "text-orange-500":
       return "bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20";
+    case "text-purple-500":
+      return "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20";
+    case "text-pink-500":
+      return "bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20";
     default:
       return "";
   }
@@ -133,7 +139,7 @@ export function SkillsSection() {
                     <Badge
                       key={skill.name}
                       variant="outline"
-                      className={`${skill.level ? getLevelColor(skill.level) : ""}`}
+                      className={getCategoryColor(category.color)}
                     >
                       {skill.name}
                     </Badge>
@@ -142,21 +148,6 @@ export function SkillsSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/30" />
-            Expert
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-blue-500/20 border border-blue-500/30" />
-            Advanced
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-orange-500/20 border border-orange-500/30" />
-            Proficient
-          </div>
         </div>
       </div>
     </section>
